@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Desktop CSS</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Aula10_3</title>
   <style>
-    
-    .submenu {
+
+    .fade-slide-enter {
       opacity: 0;
       transform: translateY(-10px);
-      pointer-events: none;
-      transition: opacity 0.25s ease, transform 0.25s ease;
     }
-
-    
-    .menu-item:hover .submenu {
+    .fade-slide-enter-active {
       opacity: 1;
       transform: translateY(0);
-      pointer-events: auto;
+      transition: all 0.3s ease;
     }
+    .fade-slide-exit {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-slide-exit-active {
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
 
-    
-    .menu-item:hover .arrow {
-      transform: rotate(180deg);
-      transition: transform 0.25s ease;
+      .submenu-transition {
+       max-height: 0;
+       overflow: hidden;
+      transition: max-height 0.3s ease;
+}
+      .submenu-open {
+      max-height: 500px; 
+}
     }
   </style>
 </head>
 <body class="bg-blue-100 min-h-screen">
 
-  
-  <<header class="bg-blue-100 shadow-lg sticky top-0 z-50">
+  <header class="bg-blue-100 shadow-lg sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       <div class="flex justify-between items-center h-16">
 
-        <!-- Logo -->
+       
         <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           MeuSite
         </h1>
 
-        
-        <div class="flex space-x-6">
-          <a href="#" class="hover:text-blue-600">Home</a>
+       
+        <nav id="menu" class="hidden sm:flex flex-row sm:flex-row sm:space-x-4 absolute sm:static top-16 left-0 w-full sm:w-auto bg-blue-100 sm:bg-transparent shadow sm:shadow-none">
+          <a href="#" class="px-4 py-2 text-white bg-blue-800 hover:bg-blue-600 rounded-full w-auto">Home</a>
 
           
-          <div class="relative menu-item">
-            <button class="flex items-center hover:text-blue-600">
+          <div class="relative group w-full sm:w-auto">
+            <button id="servicos-btn" class="w-auto sm:w-auto flex justify-between items-center px-4 py-2 text-white bg-blue-800 hover:bg-blue-600 rounded-full">
               Serviços
-              <span class="arrow ml-1">&#9660;</span>
+              <svg id="arrow" class="ml-2 w-4 h-4 transform transition-transform duration-300 delay-200 group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/>
+              </svg>
             </button>
-            <div class="absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded submenu">
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Serviço X</a>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Serviço Y</a>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Serviço Z</a>
+
+           
+           <div id="submenu" class="hidden sm:absolute sm:top-full sm:left-0 w-auto sm:w-40 bg-blue-800 rounded-lg shadow text-white mt-0.5 group-hover:block">
+            <a href="#" class="block px-3 py-1 text-white hover:bg-blue-500 rounded-md">Serviço X</a>
+            <a href="#" class="block px-3 py-1 text-white hover:bg-blue-500 rounded-md">Serviço Y</a>
+            <a href="#" class="block px-3 py-1 text-white hover:bg-blue-500 rounded-md">Serviço Z</a>
             </div>
+
           </div>
 
-          <a href="#" class="hover:text-blue-600">Sobre</a>
-          <a href="#" class="hover:text-blue-600">Contato</a>
-        </div>
+          <a href="#" class="px-4 py-2 text-white bg-blue-800 hover:bg-blue-600 rounded-full">Sobre</a>
+          <a href="#" class="px-4 py-2 text-white bg-blue-800 hover:bg-blue-600 rounded-full">Contato</a>
+        </nav>
       </div>
     </div>
-  </nav>
-
+  </header>
 </body>
 </html>
