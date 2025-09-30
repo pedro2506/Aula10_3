@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Desktop CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    
+    .submenu {
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    
+    .menu-item:hover .submenu {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    
+    .menu-item:hover .arrow {
+      transform: rotate(180deg);
+      transition: transform 0.25s ease;
+    }
+  </style>
+</head>
+<body class="bg-blue-100 min-h-screen">
+
+  
+  <<header class="bg-blue-100 shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="flex justify-between items-center h-16">
+
+        <!-- Logo -->
+        <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          MeuSite
+        </h1>
+
+        
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-blue-600">Home</a>
+
+          
+          <div class="relative menu-item">
+            <button class="flex items-center hover:text-blue-600">
+              Serviços
+              <span class="arrow ml-1">&#9660;</span>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded submenu">
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Serviço X</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Serviço Y</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Serviço Z</a>
+            </div>
+          </div>
+
+          <a href="#" class="hover:text-blue-600">Sobre</a>
+          <a href="#" class="hover:text-blue-600">Contato</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</body>
+</html>
