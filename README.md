@@ -7,7 +7,7 @@ Este projeto tem como foco o design de um **menu responsivo moderno**, elegante 
 ## 🖼️ Preview do Projeto
 
 ### 💻 
-![Preview](
+![Preview](img/preview.png)
 
 
 ---
