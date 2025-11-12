@@ -74,7 +74,6 @@ Este projeto tem como foco o design de um **menu responsivo moderno**, elegante 
 
 Para testar o projeto localmente:
 
-```bash
 # 1. Clone o repositório
 git clone https://github.com/seuusuario/codeforge.git
 
